@@ -1,6 +1,14 @@
-import "@/styles/globals.css";
-import type { AppProps } from "next/app";
+// pages/_app.tsx
+import '../styles/globals.css';
+import { AppProps } from 'next/app';
+import { ExpenseProvider } from '../utils/expenseContext';
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <ExpenseProvider>
+      <Component {...pageProps} />
+    </ExpenseProvider>
+  );
 }
+
+export default MyApp;

@@ -1,12 +1,17 @@
 // utils/expenseContext.tsx
 import { createContext, useState, useContext, ReactNode } from 'react';
 
+// utils/expenseContext.tsx
 type Expense = {
-  id: string;
-  name: string;
-  amount: number;
-  category: string;
-  color: string;
+    id: string;
+    name: string;
+    amount: number;
+    category: string;
+    color: string;
+};
+  
+const editExpense = (id: string, updatedExpense: Expense) => {
+    // lógica para atualizar a despesa com `id` usando `updatedExpense`
 };
 
 type ExpenseContextType = {

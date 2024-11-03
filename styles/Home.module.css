@@ -1,8 +1,25 @@
+/* Contêiner para o título e o botão "Criar Despesa" */
+.headerContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.6rem;
+  margin-top: 2rem;
+  margin-left: 3rem;
+}
+
+/* Estilo para o título de "Despesas" */
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #151515;
+}
+
 /* Botão "Criar Despesa" */
 .createExpenseButton {
   background-color: #117554;
   color: #ffffff;
-  padding: 0.75rem 1.5rem;
+  padding: 0.5rem 1rem;
   border: none;
   border-radius: 20px;
   font-size: 1rem;
@@ -10,64 +27,63 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 1rem;
   transition: background-color 0.3s ease;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 .createExpenseButton:hover {
   background-color: #0d6347;
 }
 
-/* Estilos do Modal */
+/* Overlay do modal para cobrir toda a tela */
 .modalOverlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 1000; /* Mantém o modal sobre todos os elementos */
 }
 
+/* Estilos do modal */
 .modal {
   background-color: #ffffff;
   padding: 2rem;
   border-radius: 8px;
-  width: 100%;
   max-width: 400px;
-  position: relative;
+  width: 100%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
 
   h2 {
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
   }
 }
 
-/* Botão Fechar (X) */
+/* Botão de fechar o modal */
 .closeButton {
   position: absolute;
   top: 1rem;
   right: 1rem;
   background: none;
   border: none;
-  fill: #151515;
+  color: #151515;
   font-size: 1.25rem;
   cursor: pointer;
-
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  opacity: 0.8;
 }
 
 .closeButton:hover {
-  transform: scale(1.01); /* Aumenta ligeiramente o botão */
-  opacity: 1; /* Torna o botão mais visível */
-  fill: #ff5c5c; /* Muda a cor para um vermelho suave no hover */
+  transform: scale(1.2);
+  opacity: 1;
 }
 
-/* Título do Gráfico */
-.chartTitle {
-  color: #117554;
-  text-align: center;
-  margin-top: 2rem;
+/* Espaçamento e alinhamento principais */
+.main {
+  padding: 1rem 3rem; /* Alinha o conteúdo principal com o título e o botão */
 }

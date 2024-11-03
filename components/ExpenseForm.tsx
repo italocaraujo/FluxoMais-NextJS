@@ -1,14 +1,35 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useExpenses } from '../utils/expenseContext';
 import styles from '../styles/ExpenseForm.module.css';
 
-const ExpenseForm = ({ onClose }: { onClose: () => void }) => {
+interface ExpenseFormProps {
+  onClose: () => void;
+  onSubmit: (expense: any) => void;
+  initialData?: {
+    name: string;
+    amount: number;
+    category: string;
+    color: string;
+  };
+}
+
+const ExpenseForm: React.FC<ExpenseFormProps> = ({ onClose, onSubmit, initialData }) => {
   const { addExpense } = useExpenses();
-  const [name, setName] = useState('');
-  const [amount, setAmount] = useState('');
-  const [category, setCategory] = useState('');
-  const [color, setColor] = useState('#117554');
+  const [name, setName] = useState(initialData?.name || '');
+  const [amount, setAmount] = useState(initialData?.amount.toString() || '');
+  const [category, setCategory] = useState(initialData?.category || '');
+  const [color, setColor] = useState(initialData?.color || '#117554');
   const [errors, setErrors] = useState({ name: '', amount: '', category: '' });
+
+  useEffect(() => {
+    // Pré-preenche o formulário com os dados iniciais se fornecidos
+    if (initialData) {
+      setName(initialData.name);
+      setAmount(initialData.amount.toString());
+      setCategory(initialData.category);
+      setColor(initialData.color);
+    }
+  }, [initialData]);
 
   const validateForm = () => {
     let valid = true;
@@ -36,13 +57,13 @@ const ExpenseForm = ({ onClose }: { onClose: () => void }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (validateForm()) {
-      addExpense({
-        id: Math.random().toString(36).substring(7),
+      const expenseData = {
         name,
         amount: parseFloat(amount),
         category,
         color,
-      });
+      };
+      onSubmit(expenseData); // Chama a função onSubmit passada como prop
       setName('');
       setAmount('');
       setCategory('');
@@ -78,7 +99,6 @@ const ExpenseForm = ({ onClose }: { onClose: () => void }) => {
       />
       {errors.category && <span className={styles.error}>{errors.category}</span>}
       
-      {/* Seletor de Cor Centralizado */}
       <div className={styles.colorPickerContainer}>
         <label className={styles.colorLabel}>Escolha uma cor para a despesa:</label>
         <input

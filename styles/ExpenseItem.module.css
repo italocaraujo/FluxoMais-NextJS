@@ -1,0 +1,116 @@
+/* Estilo principal para o item de despesa */
+.expenseItem {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    border-bottom: 1px solid #e0e0e0;
+    position: relative; /* Necessário para posicionamento absoluto dos botões */
+  }
+  
+  /* Classe para indicar o item selecionado */
+  .expenseItemSelected .actions {
+    visibility: visible; /* Exibe os botões quando o item é selecionado */
+  }
+  
+  /* Checkbox personalizada */
+  .checkbox {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #117554;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .checkbox:checked {
+    background-color: #117554;
+    border-color: #117554;
+  }
+  
+  .checkbox:checked::before {
+    content: '✔';
+    display: block;
+    color: #ffffff;
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 20px;
+  }
+  
+  /* Indicador de cor para a despesa */
+  .colorIndicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+  }
+  
+  /* Informações sobre a despesa */
+  .expenseInfo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #151515;
+    flex-grow: 1;
+  }
+  
+  /* Nome da despesa */
+  .expenseName {
+    font-weight: bold;
+  }
+  
+  /* Contêiner para botões, que sempre ocupa espaço */
+  .actions {
+    display: flex;
+    gap: 0.5rem;
+    visibility: hidden; /* Botões invisíveis por padrão */
+    position: absolute;
+    right: 1rem; /* Alinhado à direita do item */
+  }
+  
+  /* Botão de editar */
+  .editButton {
+    display: flex;
+    align-items: center;
+    padding: 0.3rem 0.6rem;
+    background-color: #117554;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .editButton:hover {
+    background-color: #0d6347;
+  }
+  
+  .editButton::before {
+
+    margin-right: 0.3rem;
+  }
+  
+  /* Botão de excluir */
+  .deleteButton {
+    display: flex;
+    align-items: center;
+    padding: 0.3rem 0.6rem;
+    background-color: #B8001F;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .deleteButton:hover {
+    background-color: #e40d0d;
+  }
+  
+  .deleteButton::before {
+    margin-right: 0.3rem;
+  }
+  
