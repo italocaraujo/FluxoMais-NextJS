@@ -1,0 +1,13 @@
+/* styles/ExpenseChart.module.css */
+.chartContainer {
+    margin-top: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .chartTitle {
+    color: #117554;
+    text-align: center;
+  }
+  

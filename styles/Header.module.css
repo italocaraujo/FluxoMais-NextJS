@@ -1,0 +1,25 @@
+/* styles/Header.module.css */
+.header {
+    background-color: #117554;
+    color: #ffffff;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+  }
+
+.header h1 {
+    color: #ffffff;
+}
+
+.menuButton {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .title {
+    margin-left: 1rem;
+  }
+  

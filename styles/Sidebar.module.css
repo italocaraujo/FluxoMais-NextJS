@@ -1,0 +1,55 @@
+/* Sidebar.module.css */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Inicialmente fora da tela à esquerda */
+    width: 250px;
+    height: 100vh;
+    background-color: #151515;
+    color: #ffffff;
+    padding: 1rem;
+    z-index: 1000;
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(-100%); /* Escondida */
+  }
+  
+  /* Quando sidebarOpen é aplicado, ela se move para a posição visível */
+  .sidebarOpen {
+    transform: translateX(250px); /* Movida para a posição visível */
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .closeButton {
+    background: none;
+    border: none;
+    color: #ffffff;
+
+    fill: #ffffff;
+    font-size: 1.25rem;
+    cursor: pointer;
+  }
+
+  .closeButton:hover {
+    transform: scale(1.01); /* Aumenta ligeiramente o botão */
+    opacity: 1; /* Torna o botão mais visível */
+    fill: #ff5c5c; /* Muda a cor para um vermelho suave no hover */
+  }
+  
+  .menuList {
+    list-style: none;
+    padding: 0;
+  }
+  
