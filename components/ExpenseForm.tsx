@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useExpenses } from '../utils/expenseContext';
 import styles from '../styles/ExpenseForm.module.css';
-import { Expense as ExpenseType } from '../utils/types';
 
 interface Expense {
   id?: string;

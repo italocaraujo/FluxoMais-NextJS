@@ -9,7 +9,7 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
 // Definição do tipo para o contexto de despesas
 interface Expense {
-  id: string;
+  id: string
   name: string;
   amount: number;
   color: string;
