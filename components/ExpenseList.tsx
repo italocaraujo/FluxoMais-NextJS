@@ -3,6 +3,7 @@ import ExpenseItem from './ExpenseItem';
 import ExpenseForm from './ExpenseForm';
 import { useExpenses } from '../utils/expenseContext';
 import styles from '../styles/ExpenseList.module.css';
+import { Expense as ExpenseType } from '../utils/types';
 
 // Define um tipo para a despesa
 interface Expense {
@@ -30,10 +31,13 @@ const ExpenseList = () => {
   };
 
   // Define o tipo do parâmetro 'updatedExpense'
-  const handleEdit = (updatedExpense: Expense) => {
+  const handleEdit = (updatedExpense: Omit<Expense, 'id'>) => {
     if (expenseToEdit) {
-      editExpense(expenseToEdit.id, updatedExpense); // Atualiza a despesa no contexto
-      closeEditModal(); // Fecha o modal após salvar as alterações
+      editExpense(expenseToEdit.id, {
+        ...updatedExpense,
+        id: expenseToEdit.id, // Reintroduz o ID
+      });
+      closeEditModal();
     }
   };
 
