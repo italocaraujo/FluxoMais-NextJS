@@ -62,7 +62,7 @@ export default function Home() {
                     c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z"/>
                 </svg>
               </button>
-              <h2>Adicionar Despesa</h2>
+              <h2 className={styles.heading}>Adicionar Despesa</h2>
               <ExpenseForm onClose={closeModal} onSubmit={handleAddExpense} />
             </div>
           </div>
